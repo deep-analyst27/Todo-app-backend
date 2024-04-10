@@ -55,4 +55,3 @@ def read_root(settings: config.Settings = Depends(get_settings)):
 def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
 
-Expose 5432
