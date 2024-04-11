@@ -55,6 +55,10 @@ def read_root(settings: config.Settings = Depends(get_settings)):
 def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
 
+@app.head("/", responses={"200": {"content": {"text/plain": {}}})
+def read_root_head():
+    return ""
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=10000)
